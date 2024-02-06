@@ -1,4 +1,6 @@
-﻿using Epita_AutoMapper_Demo.Services;
+﻿using AutoMapper;
+using Epita_AutoMapper_Demo.Models;
+using Epita_AutoMapper_Demo.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +10,16 @@ namespace Epita_AutoMapper_Demo.Controllers
     [ApiController]
     public class HeroesController : ControllerBase
     {
+        private readonly IMapper _mapper;
+        public HeroesController(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
+
         [HttpGet]
         public IActionResult GetHeroes()
         {
-
-            return Ok(SuperHeroRepository.SuperHeroes());
+            return Ok(SuperHeroRepository.SuperHeroes().Select(hero=>_mapper.Map<SuperheroDTO>(hero)));
         }
     }
 }

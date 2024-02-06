@@ -23,7 +23,7 @@ namespace Epita_AutoMapper_Demo.Services
          LastName = "Parker",
          Universe = "New York City",
          dateAdded = new DateTime(2001, 08, 10),
-         dateUpdated = null
+         dateUpdated = null 
      },
      new Superhero {
          Id = 2,
