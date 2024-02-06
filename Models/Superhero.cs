@@ -9,7 +9,7 @@
 
         public string Universe { get; set; } = string.Empty;
 
-        public DateTime? dateAdded { get; set; };
+        public DateTime? dateAdded { get; set; }
         public DateTime? dateUpdated { get; set;}
 
     }

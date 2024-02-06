@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Epita_AutoMapper_Demo.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Epita_AutoMapper_Demo.Controllers
@@ -7,6 +8,12 @@ namespace Epita_AutoMapper_Demo.Controllers
     [ApiController]
     public class HeroesController : ControllerBase
     {
+        [HttpGet]
+        public IActionResult GetHeroes()
+        {
+
+            return Ok(SuperHeroRepository.SuperHeroes());
+        }
     }
 }
 
